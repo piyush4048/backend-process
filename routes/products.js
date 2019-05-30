@@ -46,30 +46,12 @@ router.post('/',function(req,res){
         description:req.body.description,
         price:req.body.price
         });
-<<<<<<< HEAD
         newProduct.save(function(err,newEntry){
           if(err){
               res.json(err).status(400);
           }else{
               res.json(newEntry).status(201);
           }
-=======
-        var count=0;
-        productModel.find({name:req.body.name})
-        .exec()
-        .then(productss=>{
-            if(products.length>0){
-                res.send("product already exists and count is =").status(400);
-                count++;
-                res.send(count);
-            }
-            else{
-                newProduct.save();
-                res.send("product newely added ").status(201);
-                count=1;
-                res.send(count);
-            }
->>>>>>> f6880b449dffe30047fae09772f9960e7972ca51
         })
 
         });
