@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+         <meta charset="UTF-8">
+        <title>aayega</title>
+    </head>
+    <body>
+        <p id="ll"></p>
+        <script>
+            const xhr= new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200){
+                   var x=(JSON.parse(this.responseText)); 
+                   document.getElementById("ll").innerHTML=x.trains;
+                   
+                }
+                
+            };
+            xhr.open("get","https://api.railwayapi.com/v2/between/source/NDLS/dest/HAN/date/30-05-2019/apikey/jkhwtncfzm/",true);
+            xhr.send();
+
+        </script>
+    </body>
+</html>
