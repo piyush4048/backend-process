@@ -15,16 +15,16 @@ router.post('/',function(req,res){
         price:req.body.price
         });
         var count=0;
-        Model.find({name:req.body.name})
+        productModel.find({name:req.body.name})
         .exec()
-        .then(users=>{
-            if(users.length>0){
+        .then(productss=>{
+            if(products.length>0){
                 res.send("product already exists and count is =").status(400);
                 count++;
                 res.send(count);
             }
             else{
-                newUser.save();
+                newProduct.save();
                 res.send("product newely added ").status(201);
                 count=1;
                 res.send(count);
