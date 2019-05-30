@@ -4,7 +4,7 @@ const parser=require('body-parser');
 const mongoose =require('mongoose');
 //let count =0;
 const app=express();
-const port=1234;
+const port=1656;
 mongoose.set('useCreateIndex', true);
 mongoose.connect("mongodb+srv://guptajiiiiii:Piyushgupta@cluster0-m9g4a.mongodb.net/test?retryWrites=true" ,{ useNewUrlParser: true },function(err){
   if(err){
@@ -16,6 +16,8 @@ mongoose.connect("mongodb+srv://guptajiiiiii:Piyushgupta@cluster0-m9g4a.mongodb.
 });
 const user=require('./routes/user');
 const products=require('./routes/products');
+const orders=require('./routes/orders');
+
 // products=require('./routes/products');
 app.use(morgan('dev'));
 app.use(parser.json());
@@ -28,6 +30,7 @@ app.use('*',function(req,res,next){
 });
 app.use('/user',user);
 app.use('/products',products);
+app.use('/orders',orders);
 
 //app.use('/products',products);
 //app.get('*',function(req,res,next){

@@ -5,4 +5,4 @@ const productSchema=mongoose.Schema({
     description: {type:String ,required:true,unique:true},
    price: {type:Number ,required:true}
 });
-module.exports=mongoose.model('product',productSchema); 
+module.exports=mongoose.model('products',productSchema); 
